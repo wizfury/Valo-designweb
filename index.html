@@ -59,30 +59,52 @@
         </script> -->
 
         <script>
-    const audio = document.getElementById('bg-music');
-    const logo = document.getElementById('main-logo');
-    const body = document.body;
-    const startBtn = document.getElementById('start-btn');
+     const gifs = [
+    "anim/endeye.gif",
+    "anim/1.\ astra.gif",
+    "anim/2.\ Phoenix.gif",
+    "anim/3.\ reyna.gif",
+    "anim/6.jett.gif",
+    "anim/sova.gif",
+    "anim/raze.gif",
+    "anim/omenn.gif",
+    "anim/flesh.gif",
+    "anim/viper.gif",
+    "anim/iso.gif",
+    "anim/cypher.gif",
+    "anim/Space\ Glow\ GIF\ by\ Erica\ Anderson.gif",
 
-    startBtn.addEventListener('click', async () => {
+  ];
+
+   const audio = document.getElementById("bg-music");
+    const logo = document.getElementById("main-logo");
+    const startBtn = document.getElementById("start-btn");
+
+    let loaded = 0;
+
+    // preload gifs
+    gifs.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        loaded++;
+        if (loaded === gifs.length) {
+          console.log("All GIFs preloaded!");
+          startBtn.disabled = false; // enable button once ready
+          startBtn.textContent = "Start Experience";
+        }
+      };
+    });
+
+    // user clicks start
+    startBtn.addEventListener("click", async () => {
       try {
-        // reset audio to start
-        audio.currentTime = 0;
         await audio.play();
-
-        // restart background animation
-        body.classList.remove('animate-bg');
-        void body.offsetWidth; // force reflow to reset animation
-        body.classList.add('animate-bg');
-
-        // restart logo animation
-        logo.classList.remove('animate');
-        void logo.offsetWidth; // force reflow
-        logo.classList.add('animate');
-
-        startBtn.style.display = "none"; // hide button
+        document.body.classList.add("start"); // start background animation
+        logo.classList.add("animate");        // start logo animation
+        startBtn.style.display = "none";      // hide button
       } catch (err) {
-        console.error("Error starting audio/animation:", err);
+        console.error("Audio play blocked:", err);
       }
     });
   </script>

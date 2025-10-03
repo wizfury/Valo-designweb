@@ -1,13 +1,6 @@
 
 @keyframes changebackground{
-    /* 0%,20%{
-        background-image: url("anim/1.\ astra.gif");
-    }
-    20.1%,30%{
-        background-image: url("anim/2.\ Phoenix.gif");
-    } */
-
-    /* add all  the gifs in anim folder */
+    
     0%,2%{
         background-image: url("anim/endeye.gif");
     }
@@ -41,21 +34,12 @@
     89.1%,94%{
         background-image:  url("anim/iso.gif");
     }
-    /* 84.1%,90%{
-        background-image: url("anim/Butterfly\ Nod\ GIF\ by\ Xbox.gif");
-    } */
-
-    /* 90.1%,94%{
-        background-image:  url("anim/endeye.gif");
-  
-    } */
+   
     94.1%,100%{
         background-image:  url("anim/cypher.gif");
             
     }
-    /* 84.1%,100%{
-        background-image:  url("anim/clove.gif");
-    }    */
+    
 
 }
 
@@ -65,6 +49,10 @@
     0%,100%{
         background-image: url("anim/Space\ Glow\ GIF\ by\ Erica\ Anderson.gif");
     }
+}
+
+body.start {
+  animation: changebackground 29s infinite;
 }
 
 @keyframes pulse {
