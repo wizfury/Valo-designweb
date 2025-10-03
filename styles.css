@@ -1,0 +1,127 @@
+
+@keyframes changebackground{
+    /* 0%,20%{
+        background-image: url("anim/1.\ astra.gif");
+    }
+    20.1%,30%{
+        background-image: url("anim/2.\ Phoenix.gif");
+    } */
+
+    /* add all  the gifs in anim folder */
+    0%,2%{
+        background-image: url("anim/endeye.gif");
+    }
+    2.1%,20.5%{
+        background-image: url("anim/1.\ astra.gif");
+    }
+    20.6%,33%{
+        background-image: url("anim/2.\ Phoenix.gif");
+    }
+    33.1%,42%{
+        background-image: url("anim/3.\ reyna.gif");
+    }
+    42.1%,50%{
+        background-image: url("anim/6.jett.gif");
+    }
+    50.1%,55%{
+        background-image: url("anim/sova.gif");
+    }
+    55.1%,63%{
+        background-image: url("anim/raze.gif");
+    }
+    63.1%,70%{
+        background-image: url("anim/omenn.gif");
+    }
+    70.1%,80%{
+        background-image: url("anim/flesh.gif");
+    }
+    80.1%,89%{
+        background-image:  url("anim/viper.gif");
+    }
+    89.1%,94%{
+        background-image:  url("anim/iso.gif");
+    }
+    /* 84.1%,90%{
+        background-image: url("anim/Butterfly\ Nod\ GIF\ by\ Xbox.gif");
+    } */
+
+    /* 90.1%,94%{
+        background-image:  url("anim/endeye.gif");
+  
+    } */
+    94.1%,100%{
+        background-image:  url("anim/cypher.gif");
+            
+    }
+    /* 84.1%,100%{
+        background-image:  url("anim/clove.gif");
+    }    */
+
+}
+
+@keyframes blankanimation{
+    
+    
+    0%,100%{
+        background-image: url("anim/Space\ Glow\ GIF\ by\ Erica\ Anderson.gif");
+    }
+}
+
+@keyframes pulse {
+    0%{
+        transform: scale(1);
+    
+    }
+    100%{
+        transform: scale(3);
+    }
+    
+}
+
+
+body{
+    color: white;
+    /* background-image : url("galaxy2.gif"); */
+    animation: blankanimation 5s infinite;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-top: 10px;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    min-height: 100vh;
+   
+}
+
+body.animate-bg{
+    animation: changebackground 30s infinite;
+}
+
+/* h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+} */
+
+.underline{
+    text-decoration: underline;
+}
+
+.btn{
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid;
+    font-family: inherit;
+}
+
+#main-logo{
+    width:200px;
+}
+
+#main-logo.animate{
+    opacity: 1;
+    animation: pulse 10s infinite alternate;
+}
+

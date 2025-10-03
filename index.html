@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="styles.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <body>
+        <img src="anim/valo-logo.png" id="main-logo" alt="spacex"/>
+        <h1>Watch your <span class="underline">Back</span></h1>
+        <button class="btn" id="start-btn">Let's begin</button>
+     
+
+
+        <audio id="bg-music" autoplay loop playsinline preload="auto">
+            <source src="anim/valorant.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- <script>
+            const audio = document.getElementById('bg-music');
+            const logo= document.getElementById('main-logo');
+            const startbtn = document.getElementById('start-btn');
+            let started= false;
+
+            // window.addEventListener('load', async () => {
+            //     try{
+            //         await audio.play();
+            //         console.log("Audio playback started successfully");
+            //     }
+            //     catch(err){
+            //         console.log("Audio playback failed:", err);
+            //     } 
+            // });
+
+            startbtn.addEventListener(
+                'click', async () => {
+                    try {
+                        await audio.play();
+                        logo.classList.add('animate');
+                        startbtn.style.display="none" // optional: unmute immediately on button press
+                        console.log('audio + animation started');
+                    } catch (err) {
+                        console.error('Start button play failed:', err);
+                    }
+
+                }
+            );
+
+            // unmutebtm.addEventListener('click', async () => {
+            //     try {
+            //         audio.muted = false;
+            //         await audio.play();
+            //         console.log('Unmuted and playing.');
+            //     } catch (err) {
+            //         console.error('Unmute failed:', err);
+            //     }
+            // });
+        </script> -->
+
+        <script>
+    const audio = document.getElementById('bg-music');
+    const logo = document.getElementById('main-logo');
+    const body = document.body;
+    const startBtn = document.getElementById('start-btn');
+
+    startBtn.addEventListener('click', async () => {
+      try {
+        // reset audio to start
+        audio.currentTime = 0;
+        await audio.play();
+
+        // restart background animation
+        body.classList.remove('animate-bg');
+        void body.offsetWidth; // force reflow to reset animation
+        body.classList.add('animate-bg');
+
+        // restart logo animation
+        logo.classList.remove('animate');
+        void logo.offsetWidth; // force reflow
+        logo.classList.add('animate');
+
+        startBtn.style.display = "none"; // hide button
+      } catch (err) {
+        console.error("Error starting audio/animation:", err);
+      }
+    });
+  </script>
+    </body>
+</html>
